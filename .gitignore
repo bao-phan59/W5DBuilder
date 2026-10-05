@@ -1,0 +1,31 @@
+# Dependencies and generated runtime files
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.tsbuildinfo
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Local data, logs and implementation evidence
+backend/data/
+*.log
+.w5d/implementation/evidence/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+interface:
+  display_name: "W5D Phase Runner"
+  short_description: "Triển khai docs từng batch, kiểm thử gate và lưu tiến độ"
+  default_prompt: "Dùng $w5d-phase-runner triển khai batch kế tiếp từ docs/implementation/codebase, lưu checkpoint và chỉ chuyển phase khi quality gate đạt."
+policy:
+  allow_implicit_invocation: true

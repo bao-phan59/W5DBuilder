@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "phase": "WP0",
+  "status": "pending",
+  "prerequisites": [],
+  "sources": [],
+  "tasks": [],
+  "requirements": [],
+  "gate": {
+    "status": "pending",
+    "required_check_ids": [],
+    "evidence_paths": [],
+    "verified_at": null,
+    "reason": "Chưa inventory và chưa chạy acceptance checks."
+  },
+  "roadmap_mapping": ["M0"],
+  "next_action": "Điền requirements từ acceptance WP0 và lập batch đầu tiên."
+}

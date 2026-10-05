@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w5d.local/schemas/script-document-1.0.schema.json",
+  "title": "W5D ScriptDocument 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "projectId", "title", "language", "style", "tone", "targetDurationMs", "interSentencePauseMs", "sentences", "entityDefinitions", "entityInstances", "estimatedTotalDurationMs"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "id": { "$ref": "#/$defs/scriptId" },
+    "projectId": { "$ref": "#/$defs/projectId" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "language": { "type": "string", "enum": ["vi", "en"] },
+    "style": { "type": "string", "enum": ["educational", "storytelling", "marketing", "tutorial"] },
+    "tone": { "type": "string", "enum": ["formal", "casual", "energetic", "calm"] },
+    "targetDurationMs": { "type": "integer", "minimum": 10000, "maximum": 600000 },
+    "interSentencePauseMs": { "type": "integer", "minimum": 0, "maximum": 2000 },
+    "sentences": { "type": "array", "minItems": 1, "maxItems": 300, "items": { "$ref": "#/$defs/sentence" } },
+    "entityDefinitions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/entityDefinition" } },
+    "entityInstances": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/entityInstance" } },
+    "estimatedTotalDurationMs": { "type": "integer", "minimum": 10000, "maximum": 600000 }
+  },
+  "$defs": {
+    "projectId": { "type": "string", "pattern": "^prj_[A-Za-z0-9][A-Za-z0-9_-]{0,127}$" },
+    "scriptId": { "type": "string", "pattern": "^scr_[A-Za-z0-9][A-Za-z0-9_-]{0,127}$" },
+    "sentenceId": { "type": "string", "pattern": "^sen_[A-Za-z0-9][A-Za-z0-9_-]{0,127}$" },
+    "entityId": { "type": "string", "pattern": "^ent_[A-Za-z0-9][A-Za-z0-9_-]{0,127}$" },
+    "instanceId": { "type": "string", "pattern": "^ins_[A-Za-z0-9][A-Za-z0-9_-]{0,127}$" },
+    "emphasisRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startChar", "endChar", "text"],
+      "properties": {
+        "startChar": { "type": "integer", "minimum": 0 },
+        "endChar": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string", "minLength": 1, "maxLength": 100 }
+      }
+    },
+    "entityInstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instanceId", "action"],
+      "properties": {
+        "instanceId": { "$ref": "#/$defs/instanceId" },
+        "action": { "type": "string", "enum": ["enter", "stay", "move", "emphasize", "exit"] },
+        "stateHint": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "positionHint": { "type": "string", "enum": ["left", "center", "right", "background", "top", "bottom", "top_left", "top_right", "bottom_left", "bottom_right"] },
+        "targetInstanceId": { "$ref": "#/$defs/instanceId" }
+      }
+    },
+    "sentence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "order", "narrationText", "sceneHint", "emphasisRanges", "entityInstructions", "estimatedDurationMs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/sentenceId" },
+        "order": { "type": "integer", "minimum": 0 },
+        "narrationText": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "sceneHint": { "type": "string", "enum": ["intro", "build", "climax", "resolution", "outro"] },
+        "emphasisRanges": { "type": "array", "maxItems": 3, "items": { "$ref": "#/$defs/emphasisRange" } },
+        "visualText": { "type": ["string", "null"], "maxLength": 30 },
+        "entityInstructions": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "$ref": "#/$defs/entityInstruction" } },
+        "estimatedDurationMs": { "type": "integer", "minimum": 1500, "maximum": 8000 }
+      }
+    },
+    "assetHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["searchQuery", "generationPrompt"],
+      "properties": {
+        "searchQuery": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "generationPrompt": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "entityDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "type", "description", "assetHints"],
+      "properties": {
+        "id": { "$ref": "#/$defs/entityId" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "type": { "type": "string", "enum": ["animal", "person", "object", "location", "concept", "icon"] },
+        "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "assetHints": { "$ref": "#/$defs/assetHints" }
+      }
+    },
+    "entityInstance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "entityId", "displayName"],
+      "properties": {
+        "id": { "$ref": "#/$defs/instanceId" },
+        "entityId": { "$ref": "#/$defs/entityId" },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 100 }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0",
+  "id": "scr_example_01",
+  "projectId": "prj_elephants",
+  "title": "Ba Chú Voi",
+  "language": "vi",
+  "style": "storytelling",
+  "tone": "calm",
+  "targetDurationMs": 30000,
+  "interSentencePauseMs": 300,
+  "sentences": [
+    {
+      "id": "sen_001",
+      "order": 0,
+      "narrationText": "Trên cánh đồng xanh, ba chú voi vui vẻ ăn cỏ.",
+      "sceneHint": "intro",
+      "emphasisRanges": [
+        { "startChar": 21, "endChar": 31, "text": "ba chú voi" },
+        { "startChar": 39, "endChar": 44, "text": "ăn cỏ" }
+      ],
+      "visualText": "BA CHÚ VOI",
+      "entityInstructions": [
+        { "instanceId": "ins_field_1", "action": "enter", "stateHint": "background", "positionHint": "background" },
+        { "instanceId": "ins_elephant_1", "action": "enter", "stateHint": "eating", "positionHint": "left" },
+        { "instanceId": "ins_elephant_2", "action": "enter", "stateHint": "eating", "positionHint": "center" },
+        { "instanceId": "ins_elephant_3", "action": "enter", "stateHint": "eating", "positionHint": "right" }
+      ],
+      "estimatedDurationMs": 4500
+    },
+    {
+      "id": "sen_002",
+      "order": 1,
+      "narrationText": "Cả ba chú ăn ngon lành, không ai để ý thời gian trôi.",
+      "sceneHint": "build",
+      "emphasisRanges": [{ "startChar": 0, "endChar": 9, "text": "Cả ba chú" }],
+      "visualText": null,
+      "entityInstructions": [
+        { "instanceId": "ins_elephant_1", "action": "stay", "stateHint": "eating", "positionHint": "left" },
+        { "instanceId": "ins_elephant_2", "action": "stay", "stateHint": "eating", "positionHint": "center" },
+        { "instanceId": "ins_elephant_3", "action": "stay", "stateHint": "eating", "positionHint": "right" }
+      ],
+      "estimatedDurationMs": 4500
+    },
+    {
+      "id": "sen_003",
+      "order": 2,
+      "narrationText": "Rồi chú voi đầu tiên quyết định rời đi.",
+      "sceneHint": "build",
+      "emphasisRanges": [{ "startChar": 32, "endChar": 38, "text": "rời đi" }],
+      "visualText": "RỜI ĐI",
+      "entityInstructions": [
+        { "instanceId": "ins_elephant_1", "action": "exit", "stateHint": "exit_left", "positionHint": "left" },
+        { "instanceId": "ins_elephant_2", "action": "stay", "stateHint": "idle", "positionHint": "center" },
+        { "instanceId": "ins_elephant_3", "action": "stay", "stateHint": "idle", "positionHint": "right" }
+      ],
+      "estimatedDurationMs": 4500
+    },
+    {
+      "id": "sen_004",
+      "order": 3,
+      "narrationText": "Một lúc sau, chú voi thứ hai cũng bước đi.",
+      "sceneHint": "build",
+      "emphasisRanges": [{ "startChar": 34, "endChar": 41, "text": "bước đi" }],
+      "visualText": null,
+      "entityInstructions": [
+        { "instanceId": "ins_elephant_2", "action": "exit", "stateHint": "exit_right", "positionHint": "center" },
+        { "instanceId": "ins_elephant_3", "action": "stay", "stateHint": "idle", "positionHint": "right" }
+      ],
+      "estimatedDurationMs": 4500
+    },
+    {
+      "id": "sen_005",
+      "order": 4,
+      "narrationText": "Chú voi cuối cùng bước chậm vào giữa cánh đồng.",
+      "sceneHint": "climax",
+      "emphasisRanges": [{ "startChar": 0, "endChar": 17, "text": "Chú voi cuối cùng" }],
+      "visualText": "CHÚ VOI CUỐI CÙNG",
+      "entityInstructions": [
+        { "instanceId": "ins_elephant_3", "action": "move", "stateHint": "walk_slow", "positionHint": "center" }
+      ],
+      "estimatedDurationMs": 5000
+    },
+    {
+      "id": "sen_006",
+      "order": 5,
+      "narrationText": "Chú dừng lại, hít sâu và mỉm cười dưới nắng.",
+      "sceneHint": "resolution",
+      "emphasisRanges": [
+        { "startChar": 14, "endChar": 21, "text": "hít sâu" },
+        { "startChar": 25, "endChar": 33, "text": "mỉm cười" }
+      ],
+      "visualText": "MỈM CƯỜI",
+      "entityInstructions": [
+        { "instanceId": "ins_elephant_3", "action": "stay", "stateHint": "smile", "positionHint": "center" }
+      ],
+      "estimatedDurationMs": 5500
+    }
+  ],
+  "entityDefinitions": [
+    {
+      "id": "ent_field",
+      "label": "cánh đồng",
+      "type": "location",
+      "description": "Cánh đồng cỏ xanh rộng, ánh sáng ban ngày.",
+      "assetHints": {
+        "searchQuery": "green meadow flat illustration wide background",
+        "generationPrompt": "Peaceful green meadow, flat illustration, wide landscape, clean background, no characters"
+      }
+    },
+    {
+      "id": "ent_elephant",
+      "label": "voi",
+      "type": "animal",
+      "description": "Chú voi hoạt hình thân thiện, toàn thân, đường viền rõ.",
+      "assetHints": {
+        "searchQuery": "cute cartoon elephant isolated transparent background",
+        "generationPrompt": "Cute friendly cartoon elephant, full body, bold clean outlines, isolated subject, transparent background"
+      }
+    }
+  ],
+  "entityInstances": [
+    { "id": "ins_field_1", "entityId": "ent_field", "displayName": "Cánh đồng" },
+    { "id": "ins_elephant_1", "entityId": "ent_elephant", "displayName": "Voi thứ nhất" },
+    { "id": "ins_elephant_2", "entityId": "ent_elephant", "displayName": "Voi thứ hai" },
+    { "id": "ins_elephant_3", "entityId": "ent_elephant", "displayName": "Voi thứ ba" }
+  ],
+  "estimatedTotalDurationMs": 30000
+}

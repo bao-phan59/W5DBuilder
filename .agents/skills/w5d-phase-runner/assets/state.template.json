@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "project_root": ".",
+  "docs_root": "docs/implementation/codebase",
+  "updated_at": null,
+  "mode": "plan",
+  "authorization": {"scope": "", "continuous": false},
+  "budget": {"max_tasks_per_batch": 3, "doc_chars_per_batch": 24000, "max_read_chars": 12000},
+  "current_phase": "WP0",
+  "current_batch": null,
+  "phase_file": "phases/WP0.json",
+  "phases": {
+    "WP0": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP1": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP2": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP3": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP4": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP5": {"status": "pending", "gate": "pending", "evidence": []},
+    "WP6": {"status": "pending", "gate": "pending", "evidence": []}
+  },
+  "tasks": [],
+  "requirements": [],
+  "sources": [],
+  "worktree": {"git_head": null, "dirty_paths": [], "file_hashes": {}},
+  "last_checks": [],
+  "blockers": [],
+  "decisions": [],
+  "next_action": "Inventory source và đọc acceptance WP0 để lập batch WP0-B01.",
+  "handoff": "Template chưa inventory; chưa có phase hoặc gate nào được xác minh."
+}
