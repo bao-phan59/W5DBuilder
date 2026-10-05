@@ -1,0 +1,3 @@
+# Offline schema validation; type-generation tooling is added in a later batch.
+jsonschema==4.26.0
+referencing==0.37.0

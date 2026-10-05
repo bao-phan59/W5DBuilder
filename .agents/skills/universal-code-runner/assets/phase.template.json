@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "phase_id": "P0",
+  "name": "Phase Name",
+  "status": "pending",
+  "prerequisites": [],
+  "sources": [],
+  "tasks": [],
+  "requirements": [],
+  "gate": {
+    "status": "pending",
+    "required_check_ids": [],
+    "evidence_paths": [],
+    "verified_at": null,
+    "reason": "Chưa hoàn thành tasks hoặc chưa chạy verification checks."
+  },
+  "milestone_mapping": [],
+  "next_action": "Xác định requirements và lập batch đầu tiên cho phase."
+}

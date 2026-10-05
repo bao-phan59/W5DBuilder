@@ -1,0 +1,6 @@
+interface:
+  display_name: "Universal Code Runner"
+  short_description: "Sinh code đa ngôn ngữ cho mọi dự án theo batch, kiểm thử chất lượng và checkpoint an toàn"
+  default_prompt: "Dùng $universal-code-runner triển khai batch kế tiếp cho dự án, kiểm thử quality gate và lưu checkpoint phục hồi."
+policy:
+  allow_implicit_invocation: true

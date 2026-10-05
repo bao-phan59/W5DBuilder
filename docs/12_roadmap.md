@@ -30,7 +30,8 @@
 | Frontend editor | `SCAFFOLDED` | Vite starter, chưa có W5D UI |
 | Remotion renderer | `DESIGNED` | Chưa có project/package |
 | TTS/alignment | `DESIGNED` | Chưa implement |
-| Automated tests/CI | `DESIGNED` | Chưa có |
+| ScriptDocument validation | `TESTED` | WP0-B01: canonical schema/fixture, structural + semantic validator và 16 local contract tests pass |
+| Automated tests/CI | `SCAFFOLDED` | Có contract test runner và workflow ScriptDocument; chưa có evidence CI remote, generated types hoặc full pipeline |
 
 ## 12.3 Milestone M0 — Contract Baseline
 
@@ -40,7 +41,7 @@
 - [ ] Chốt ID rules, versioning, time units và coordinate system.
 - [ ] Viết JSON Schema/Pydantic/TypeScript generation strategy.
 - [x] Sửa skill và fixture “Ba Chú Voi” theo ScriptDocument 1.0.
-- [ ] Có structural và semantic validation cho golden fixture.
+- [x] Có structural và semantic validation cho golden ScriptDocument fixture (WP0-B01); các artifact khác và cross-runtime validation còn pending.
 
 Acceptance criteria được mô tả tại [implementation/10_delivery_plan.md](./implementation/10_delivery_plan.md).
 

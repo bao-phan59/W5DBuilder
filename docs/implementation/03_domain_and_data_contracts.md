@@ -11,7 +11,7 @@ Mọi document canonical PHẢI có:
 - `revision` ở aggregate có thể chỉnh sửa.
 - Không chứa local absolute path hoặc provider SDK object.
 
-Contract executable sẽ được đặt tại `contracts/` trong M0. File này định nghĩa semantics mà schema phải thể hiện.
+Contract executable được xây dần tại [`contracts/`](../../contracts/README.md) trong M0. WP0-B01 đã có [ScriptDocument 1.0](../../contracts/schemas/script-document.schema.json); các artifact khác còn pending. File này định nghĩa semantics mà schema phải thể hiện.
 
 ## 2. ID conventions
 

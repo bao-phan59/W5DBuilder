@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "project_name": "my-project",
+  "project_root": ".",
+  "state_dir": ".coder",
+  "updated_at": null,
+  "mode": "plan",
+  "tech_stack": {
+    "languages": [],
+    "frameworks": [],
+    "package_managers": [],
+    "test_command": null,
+    "lint_command": null,
+    "typecheck_command": null,
+    "build_command": null
+  },
+  "docs_root": ["docs", "README.md"],
+  "authorization": {
+    "scope": "",
+    "allow_network": false,
+    "allow_destructive": false,
+    "continuous": false
+  },
+  "budget": {
+    "max_tasks_per_batch": 3,
+    "doc_chars_per_batch": 24000,
+    "max_read_chars": 12000
+  },
+  "current_phase": "P0",
+  "current_batch": null,
+  "phase_file": "phases/P0.json",
+  "phases": {
+    "P0": {"name": "Baseline & Environment", "status": "pending", "gate": "pending", "evidence": []},
+    "P1": {"name": "Core Contracts & Models", "status": "pending", "gate": "pending", "evidence": []},
+    "P2": {"name": "Business Logic & Services", "status": "pending", "gate": "pending", "evidence": []},
+    "P3": {"name": "Integration & Presentation", "status": "pending", "gate": "pending", "evidence": []},
+    "P4": {"name": "E2E & Production Hardening", "status": "pending", "gate": "pending", "evidence": []}
+  },
+  "tasks": [],
+  "requirements": [],
+  "sources": [],
+  "worktree": {
+    "git_head": null,
+    "dirty_paths": [],
+    "file_hashes": {}
+  },
+  "last_checks": [],
+  "blockers": [],
+  "decisions": [],
+  "next_action": "Chạy stack_detect, inventory mã nguồn và lập kế hoạch phase P0.",
+  "handoff": "Template khởi tạo; chưa chạy inventory hoặc xác minh gate."
+}

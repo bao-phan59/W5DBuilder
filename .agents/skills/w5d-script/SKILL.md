@@ -16,6 +16,8 @@ Tạo một `ScriptDocument` hợp lệ để pipeline W5D tiếp tục xử lý
 
 Nếu instruction này khác schema, schema là nguồn sự thật. Output dùng `camelCase`, millisecond và ID prefix chuẩn; không phát sinh contract snake_case cũ.
 
+Canonical của dự án: [`contracts/schemas/script-document.schema.json`](../../../contracts/schemas/script-document.schema.json). Schema/fixture trong skill là mirror portable kiểm tra byte-for-byte khi dùng trong W5DBuilder; bản skill độc lập vẫn dùng files nội bộ.
+
 ## Input
 
 - `idea`: bắt buộc.
@@ -42,6 +44,7 @@ Chỉ hỏi lại khi thiếu `idea` hoặc một lựa chọn làm thay đổi 
 ## Keyword và timing
 
 - `emphasisRanges` dùng half-open character offsets `[startChar, endChar)` trên đúng `narrationText`.
+- Offsets tính theo Unicode code points, không theo UTF-16 code units; không normalize narration trước khi tính offsets. Python dùng string slicing, TypeScript dùng `Array.from(text)` trước khi slice.
 - Text tại range phải khớp chính xác field `text`; ranges không overlap và tối đa ba range mỗi câu.
 - `visualText` tối đa 30 ký tự; dùng `null` nếu không cần hiển thị.
 - `estimatedDurationMs` mỗi câu nằm trong `1500..8000`.

@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "project_root": ".",
+  "docs_root": "docs/implementation/codebase",
+  "updated_at": "2026-10-06T06:35:30.377560+07:00",
+  "mode": "start",
+  "authorization": {
+    "scope": "Sinh code d? ?n theo skill, batch ??u WP0; kh?ng live provider/deploy",
+    "continuous": false
+  },
+  "budget": {
+    "max_tasks_per_batch": 3,
+    "doc_chars_per_batch": 24000,
+    "max_read_chars": 12000
+  },
+  "current_phase": "WP0",
+  "current_batch": "WP0-B01",
+  "phase_file": "phases/WP0.json",
+  "phases": {
+    "WP0": {
+      "status": "in_progress",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP1": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP2": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP3": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP4": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP5": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    },
+    "WP6": {
+      "status": "pending",
+      "gate": "pending",
+      "evidence": []
+    }
+  },
+  "tasks": [
+    {
+      "id": "WP0-T01",
+      "batch": "WP0-B01",
+      "status": "in_progress",
+      "goal": "Canonical ScriptDocument schema/fixture v? ADR compatibility",
+      "requirement_ids": [
+        "WP0-AC01",
+        "WP0-AC02",
+        "WP0-AC03"
+      ],
+      "depends_on": [],
+      "check_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-T02",
+      "batch": "WP0-B01",
+      "status": "in_progress",
+      "goal": "Structural/semantic ScriptDocument validator + CLI offline",
+      "requirement_ids": [
+        "WP0-AC01",
+        "WP0-AC02",
+        "WP0-AC03"
+      ],
+      "depends_on": [],
+      "check_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-T03",
+      "batch": "WP0-B01",
+      "status": "in_progress",
+      "goal": "Regression contract tests v? CI ScriptDocument check",
+      "requirement_ids": [
+        "WP0-AC01",
+        "WP0-AC02",
+        "WP0-AC03"
+      ],
+      "depends_on": [],
+      "check_ids": [],
+      "evidence_paths": []
+    }
+  ],
+  "requirements": [
+    {
+      "id": "WP0-AC01",
+      "assertion": "M?i fixture validate trong CI",
+      "required": true,
+      "status": "pending",
+      "task_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-AC02",
+      "assertion": "T?ng duration ???c ki?m tra t? ??ng",
+      "required": true,
+      "status": "pending",
+      "task_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-AC03",
+      "assertion": "Entity lifecycle c?a fixture h?p l?",
+      "required": true,
+      "status": "pending",
+      "task_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-AC04",
+      "assertion": "Canonical script output duy nh?t",
+      "required": true,
+      "status": "pending",
+      "task_ids": [],
+      "evidence_paths": []
+    },
+    {
+      "id": "WP0-AC05",
+      "assertion": "Design docs link v? executable contract",
+      "required": true,
+      "status": "pending",
+      "task_ids": [],
+      "evidence_paths": []
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/implementation/10_delivery_plan.md",
+      "section": "## 2. WP0",
+      "sha256": "9a0be4a6c09c03f7d4b754d697bdeca63a8a39148f92bf4882ad8a76e42d9941"
+    },
+    {
+      "path": "docs/implementation/codebase/02_contracts_and_artifacts.md",
+      "section": "## 1, 2, 9",
+      "sha256": "a7e0fd115e9dc8e38c44780a4ace8cb21e0542adf95057f7c65a22b64694ee30"
+    },
+    {
+      "path": ".agents/skills/w5d-script/SKILL.md",
+      "section": "Keyword v? timing; Validation",
+      "sha256": "80b5b8a3ebaabebe6da192a4d4a11cb1d2bf07809c50da7d5df578d640c94303"
+    },
+    {
+      "path": "docs/implementation/codebase/11_testing_ci_and_release.md",
+      "section": "## 2. Contract tests",
+      "sha256": "5af162b2a082df0943826f2dff9ee377a81ea50429b46619f49557984bdc5349"
+    }
+  ],
+  "worktree": {
+    "git_head": "9fbb5ee0099aa0ada01b10674ce4550e912e9cea",
+    "dirty_paths": [],
+    "file_hashes": {}
+  },
+  "last_checks": [],
+  "blockers": [],
+  "decisions": [],
+  "next_action": "Implement ScriptDocument 1.0 canonical schema, validator v? targeted contract tests.",
+  "handoff": "WP0-B01 ?ang tri?n khai; c?c artifact c?n l?i v? generated types ch?a c?."
+}

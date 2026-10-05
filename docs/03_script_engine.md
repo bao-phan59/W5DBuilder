@@ -1,7 +1,7 @@
 # 03 — Script Engine và Skill `w5d-script`
 
 > Loại: Design specification đã đồng bộ Contract 1.0  
-> Contract executable hiện tại: [`.agents/skills/w5d-script/schemas/script.schema.json`](../.agents/skills/w5d-script/schemas/script.schema.json)  
+> Contract executable hiện tại: [`contracts/schemas/script-document.schema.json`](../contracts/schemas/script-document.schema.json)
 > Production implementation: [`implementation/codebase/05_script_voice_pipeline.md`](./implementation/codebase/05_script_voice_pipeline.md)
 
 ## 3.1 Vai trò
